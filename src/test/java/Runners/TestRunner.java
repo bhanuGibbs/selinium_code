@@ -1,9 +1,5 @@
 package Runners;
-
-//package com.automation.runners;
-
 import org.junit.platform.suite.api.*;
-
 import static io.cucumber.junit.platform.engine.Constants.*;
 
 @Suite
@@ -22,6 +18,6 @@ import static io.cucumber.junit.platform.engine.Constants.*;
 
 //Using Cucumber Built-in HTML Report
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME,
-        value = "pretty, html:target/cucumber-reports/html-report.html, json:target/cucumber-reports/cucumber.json")
+        value = "pretty, html:target/cucumber-reports/html-report.html")
 public class TestRunner {
 }

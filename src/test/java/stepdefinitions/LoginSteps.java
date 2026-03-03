@@ -4,6 +4,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import pages.LoginPage;
 import utilities.DriverFactory;
+import utilities.ExcelUtils;
 import utilities.LoggerHelper;
 import org.slf4j.Logger;
 import io.cucumber.java.en.*;
@@ -35,6 +36,7 @@ public class LoginSteps {
       //  before(scenario.log("Navigated to login page."));
         scenario.log("Opened URL");
         System.out.println("OPEN Step executed successfully");
+
         Thread.sleep(10000);
     }
 
