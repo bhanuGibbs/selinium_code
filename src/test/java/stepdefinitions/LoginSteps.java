@@ -3,13 +3,9 @@ package stepdefinitions;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import pages.LoginPage;
-import utilities.DriverFactory;
-import utilities.ExcelUtils;
-import utilities.LoggerHelper;
+import utilities.*;
 import org.slf4j.Logger;
 import io.cucumber.java.en.*;
-import utilities.ScenarioLogger;
-
 
 
 public class LoginSteps {
@@ -17,6 +13,7 @@ public class LoginSteps {
     private static final Logger log = LoggerHelper.getLogger(LoginSteps.class);
 
     LoginPage loginPage;
+    PDFUtils pdfUtils;
    //  LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
     private Scenario scenario;
 
@@ -36,14 +33,13 @@ public class LoginSteps {
       //  before(scenario.log("Navigated to login page."));
         scenario.log("Opened URL");
         System.out.println("OPEN Step executed successfully");
-
         Thread.sleep(10000);
     }
 
     @When("user enters username {string}")
     public void user_enters_username(String username) {
+
         loginPage.enterUsername(username);
-        log.info("Entered username: " + username);
         scenario.log("Entered username: " + username);
 
     }
@@ -65,5 +61,11 @@ public class LoginSteps {
     @Then("user should see home page")
     public void user_should_see_home_page() {
         log.info("Login successful");
+    }
+
+    @Then("pdf_validation")
+    public void pdfvalidation(){
+    PDFUtils.pdfvalidation();
+
     }
 }

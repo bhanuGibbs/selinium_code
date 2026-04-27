@@ -31,13 +31,17 @@ public class LoginPage {
         driver.get(url);
         ExcelUtils.updateExcel(testdatapath,"Data","T-001","Url",url);
 
-
     }
 
     public void enterUsername(String user) {
+       String  userid=ExcelUtils.readExcel(testdatapath,"Data","T-001","EmployerUseriD");
+        System.out.println("userID from ExcelS heeet :"+ userid);
+       // driver.findElement(username).sendKeys(userid);
+
         driver.findElement(username).sendKeys(user);
-        log.info("user enter username:{}", username);
-        ExcelUtils.updateExcel(testdatapath,"Data","T-001","EmployerUseriD",user);
+
+        log.info("user enter username:{}", userid);
+        //ExcelUtils.updateExcel(testdatapath,"Data","T-001","EmployerUseriD",user);
 
     }
 
